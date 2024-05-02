@@ -6,11 +6,11 @@ const ProjectComponent: React.FC<{
   if (props.index % 2 === 0) {
     return (
       <div className="flex">
-        <div className=" text-cyan-50 ">
+        <div className=" text-cyan-50 w-1/3">
           <h2>{props.title}</h2>
           <p>{props.about}</p>
         </div>
-        <div>
+        <div className="w-2/3">
           <img src="framer.svg" alt="picture" />
         </div>
       </div>
@@ -19,10 +19,10 @@ const ProjectComponent: React.FC<{
 
   return (
     <div className="flex">
-      <div>
+      <div className="w-2/3">
         <img alt="picture" src="framer.svg" />
       </div>
-      <div className=" text-cyan-50">
+      <div className=" text-cyan-50 w-1/3">
         <h2>{props.title}</h2>
         <p>{props.about}</p>
       </div>
