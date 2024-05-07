@@ -2,12 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  touch-action: manipulation; /* Ensures responsiveness on touch devices */
+  user-zoom: fixed; /* Disables zooming */
+}
+
 div {
   align-items: center;
   justify-content: center;
-}
-
-.about button {
 }
 
 .play-regular {
@@ -27,4 +29,54 @@ body {
   background-color: black;
   background-size: contain;
   background-attachment: fixed;
+}
+
+.images {
+  max-height: 600px;
+}
+
+.prob {
+  height: 36rem;
+}
+
+.modal {
+  top: 10%;
+  border-radius: 6px;
+  padding: 1.5rem;
+  width: 30rem;
+  max-width: 90%;
+  z-index: 14;
+  position: fixed;
+}
+
+.modal h2 {
+  margin-top: 0;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 12;
+}
+
+.home-buttons {
+  transition: background-color 0.5s ease, text-decoration 0.5s ease;
+}
+
+.active-tab-indicator {
+  margin-right: 10%;
+  margin-left: 10%;
+  border: 1.5px solid #6dd5ed;
+  border-radius: 8px;
+}
+
+.active-tab-indicator-about {
+  border: 1.5px solid #38a169;
+  border-radius: 8px;
+  position: absolute;
+  width: 100%;
 }
