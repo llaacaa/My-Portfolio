@@ -13,9 +13,9 @@ const ProjectComponent: React.FC<{
 
   if (props.index % 2 === 0) {
     return (
-      <div className="flex overflow-x-hidden" ref={projectRef}>
+      <div className="lg:flex overflow-x-hidden" ref={projectRef}>
         <motion.div
-          className=" text-cyan-300 play-bold w-1/3 text-3xl"
+          className=" text-cyan-300 play-bold lg:w-1/3 textProject small-m lg:text-2xl"
           initial={{ opacity: 0, x: -150 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 1 }}
@@ -23,16 +23,17 @@ const ProjectComponent: React.FC<{
           <p>{props.about}</p>
         </motion.div>
         <motion.div
-          className="w-2/3 pl-10 overflow-hidden"
+          className="lg:w-2/3 pl-10 overflow-hidden sm:my-3"
           initial={{ opacity: 0, x: 300 }}
           animate={isInView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 1 }}
         >
           <a href={props.page}>
-            <img
+            <motion.img
               src={props.src}
               alt="picture"
-              className=" rounded-lg images object-cover w-full h-full"
+              className=" rounded-l-3xl images object-cover w-full h-full "
+              whileHover={{ x: 50, transition: { delay: 0.3 } }}
             />
           </a>
         </motion.div>
@@ -41,23 +42,24 @@ const ProjectComponent: React.FC<{
   }
 
   return (
-    <div className="flex overflow-x-hidden" ref={projectRef}>
+    <div className="lg:flex overflow-x-hidden" ref={projectRef}>
       <motion.div
-        className="w-2/3 pr-10 overflow-hidden"
+        className="lg:w-2/3  pr-10 overflow-hidden sm:my-3 "
         initial={{ opacity: 0, x: -300 }}
         animate={isInView ? { opacity: 1, x: 0 } : {}}
         transition={{ duration: 1 }}
       >
         <a href={props.page}>
-          <img
+          <motion.img
             alt="picture"
             src={props.src}
-            className=" rounded-lg images object-cover w-full h-full"
+            className=" rounded-r-3xl images object-cover w-full h-full "
+            whileHover={{ x: -50, transition: { delay: 0.3 } }}
           />
         </a>
       </motion.div>
       <motion.div
-        className=" text-cyan-300 play-bold w-1/3 text-3xl"
+        className=" text-cyan-300 play-bold lg:w-1/3 textProject small-m lg:text-2xl"
         initial={{ opacity: 0, x: 150 }}
         animate={isInView ? { opacity: 1, x: 0 } : {}}
         transition={{ duration: 1 }}

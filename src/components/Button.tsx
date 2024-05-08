@@ -1,11 +1,18 @@
-const Button: React.FC<{ children: string; onClick: () => void }> = (props) => {
+import { motion } from "framer-motion";
+
+const Button: React.FC<{
+  children: string;
+  onClick: () => void;
+  isActive: boolean;
+}> = (props) => {
   return (
-    <button
+    <motion.button
       onClick={props.onClick}
-      className=" bg-green-400 m-2 px-8 py-1 text-3xl"
+      className=" bg-green-400 buttons-about w-max"
+      whileHover={{ y: -5, scale: 1.2 }}
     >
       {props.children}
-    </button>
+    </motion.button>
   );
 };
 

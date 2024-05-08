@@ -1,8 +1,11 @@
 import { motion, useAnimate } from "framer-motion";
+import { useState } from "react";
 
 const Arrow: React.FC<{
   onClick: (is: boolean) => void;
 }> = (props) => {
+  const [text, setText] = useState("Show all skills");
+
   const [scope, animate] = useAnimate();
   const [scopeText, animateText] = useAnimate();
   const handleAnimateStart = async () => {
@@ -17,7 +20,7 @@ const Arrow: React.FC<{
   return (
     <>
       <motion.div
-        className="bg-slate-300 opacity-55 flex w-48 h-16 play-boldpt-2 rounded-b-xl text-lg ml-auto cursor-pointer mr-5"
+        className="bg-slate-300 flex w-48 h-16  rounded-b-xl text-lg ml-auto cursor-pointer mr-5"
         onClick={() => props.onClick(true)}
         initial={{ opacity: 0, y: 25 }}
         animate={{
@@ -25,8 +28,14 @@ const Arrow: React.FC<{
           y: 0,
           transition: { duration: 0.3, delay: 0.6 },
         }}
-        onHoverStart={() => handleAnimateStart()}
-        onHoverEnd={() => handleAnimateEnd()}
+        onHoverStart={() => {
+          setText("Click me");
+          handleAnimateStart();
+        }}
+        onHoverEnd={() => {
+          setText("Show all skills");
+          handleAnimateEnd();
+        }}
       >
         <div className="w-1/4 flex">
           <motion.img
@@ -37,7 +46,7 @@ const Arrow: React.FC<{
           />
         </div>
         <div className="w-3/4 flex mx-2">
-          <p ref={scopeText}>Show all skills</p>
+          <p ref={scopeText}>{text}</p>
         </div>
       </motion.div>
     </>

@@ -36,14 +36,25 @@ body {
 }
 
 .prob {
-  height: 36rem;
+  @media screen and (min-width: 300px) {
+    width: 100%;
+  }
+  @media screen and (min-width: 601px) and (max-width: 1024px) {
+    width: 100%;
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  @media screen and (min-width: 1025px) {
+    font-size: 1.5rem;
+  }
 }
 
 .modal {
-  top: 10%;
+  top: 30%;
   border-radius: 6px;
   padding: 1.5rem;
-  width: 30rem;
+  width: 20rem;
   max-width: 90%;
   z-index: 14;
   position: fixed;
@@ -59,7 +70,7 @@ body {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(0, 0, 0, 0.781);
   z-index: 12;
 }
 
@@ -68,8 +79,8 @@ body {
 }
 
 .active-tab-indicator {
-  margin-right: 10%;
-  margin-left: 10%;
+  margin-right: 15%;
+  margin-left: 15%;
   border: 1.5px solid #6dd5ed;
   border-radius: 8px;
 }
@@ -79,4 +90,157 @@ body {
   border-radius: 8px;
   position: absolute;
   width: 100%;
+}
+
+.nav {
+  position: sticky;
+  top: 0;
+  background-color: #ffffff; /* Adjust as needed */
+  z-index: 1000; /* Adjust as needed */
+}
+
+.homepage {
+  @media screen and (max-width: 600px) {
+    text-align: center;
+  }
+}
+
+.navigation {
+  @media screen and (max-width: 600px) {
+    font-size: 0.1;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+    width: max-content;
+    justify-content: space-between;
+  }
+  @media screen and (min-width: 601px) and (max-width: 1024px) {
+    font-size: 1rem;
+    line-height: 1.5 rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    width: max-content;
+  }
+  @media screen and (min-width: 1025px) {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    width: max-content;
+  }
+}
+
+.aboutMe {
+  @media screen and (min-width: 300px) {
+    padding: 0.5rem;
+    font-size: 0.75rem;
+  }
+  @media screen and (min-width: 601px) and (max-width: 1024px) {
+    font-size: 1rem;
+  }
+  @media screen and (min-width: 1025px) {
+    font-size: 1.5rem;
+  }
+}
+
+.about {
+  @media screen and (min-width: 300px) {
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+  }
+  @media screen and (min-width: 601px) and (max-width: 1024px) {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  @media screen and (min-width: 1025px) {
+    font-size: 1.5rem;
+  }
+}
+
+.buttons-about {
+  margin-bottom: 0.5rem;
+
+  @media screen and (min-width: 300px) {
+    font-size: 0.75rem;
+    margin-left: 0.25rem;
+    margin-right: 0.25rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  @media screen and (min-width: 601px) and (max-width: 1024px) {
+    font-size: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+  }
+  @media screen and (min-width: 1025px) {
+    font-size: 1.5rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+}
+
+.skillsImg {
+  @media screen and (min-width: 300px) and (max-width: 600px) {
+    width: 5rem;
+  }
+  @media screen and (min-width: 601px) and (max-width: 1024px) {
+    width: 8rem;
+  }
+}
+
+.imagesPos {
+  @media screen and (min-width: 300px) and (max-width: 600px) {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  @media screen and (min-width: 601px) and (max-width: 1024px) {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+
+.textProject {
+  @media screen and (min-width: 300px) {
+    font-size: 0.75rem;
+  }
+  @media screen and (min-width: 601px) and (max-width: 1024px) {
+    font-size: 1rem;
+  }
+  @media screen and (min-width: 1025px) {
+    font-size: 1.3rem;
+  }
+}
+
+.projMargButtonsTop {
+  @media screen and (min-width: 300px) and (max-width: 1424px) {
+    margin-top: 5rem;
+  }
+}
+.projMargButtonsBot {
+  @media screen and (min-width: 300px) and (max-width: 1424px) {
+    margin-bottom: 5rem;
+  }
+}
+
+.small-m {
+  @media screen and (min-width: 300px) and (max-width: 1024px) {
+    margin: 3rem;
+  }
+}
+
+.navProjects {
+  @media screen and (min-width: 300px) and (max-width: 650px) {
+    margin-top: 4rem;
+  }
+  @media screen and (min-width: 651px) {
+    display: flex;
+  }
 }

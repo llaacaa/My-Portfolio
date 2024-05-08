@@ -1,4 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const Navigation: React.FC<{
   handleHomeClick: () => void;
@@ -6,16 +7,27 @@ const Navigation: React.FC<{
   handleAboutClick: () => void;
   activePage: number;
   handleClick: () => void;
-  isNavActive: boolean;
 }> = (props) => {
-  const classes = "sticky top-0 z-10 flex  text-center w-2/5 h-14 pt-2";
+  const classes = " sticky top-0 z-12 flex text-center lg:w-2/5  h-14 pt-2";
 
-  const buttonsClass = "mx-10 text-2xl text-cyan-300";
+  const buttonsClass = "text-cyan-300 navigation ";
+
+  const [isVisible, setIsVisible] = useState(props.activePage !== 0);
+
+  useEffect(() => {
+    setTimeout(() => {
+      if (props.activePage === 0) {
+        setIsVisible(false);
+      } else {
+        setIsVisible(true);
+      }
+    }, 400);
+  }, [props.activePage]);
 
   return (
     <nav className={classes}>
-      <AnimatePresence>
-        {!props.isNavActive && (
+      <AnimatePresence mode="wait">
+        {isVisible && (
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0, transition: { duration: 0.5 } }}

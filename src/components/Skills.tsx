@@ -9,15 +9,14 @@ const Skills: React.FC<{ onClick: (is: boolean) => void }> = (props) => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         exit={{ opacity: 0, y: -30 }}
-        className="flex-col w-full rounded-2xl bg-slate-500 bg-opacity-50 pt-5"
+        className="flex-col w-full rounded-2xl bg-slate-300 bg-opacity-50 pt-5"
       >
-        <div className=" flex justify-end mr-10">
+        <div className=" flex justify-end mr-10 relative mt-5">
           <motion.div
-            className="relative border-2 border-black cursor-pointer"
+            className="border-2 border-black cursor-pointer absolute"
             onClick={() => props.onClick(false)}
             whileHover={{
               scale: 1.3,
-              borderRadius: 10,
               transition: { duration: 0.3 },
             }}
           >
@@ -47,20 +46,23 @@ const Skills: React.FC<{ onClick: (is: boolean) => void }> = (props) => {
             </AnimatePresence>
           </motion.div>
         </div>
-        <div className="flex py-5 justify-between" key={1}>
-          <Images src="react.png" />
-          <Images src="redux.png" />
-          <Images src="next-js-logo.png" />
+        <div className="flex imagesPos  lg:py-5  justify-between" key={1}>
+          <Images src="react.png" srcTo="https://react.dev/" />
+          <Images src="redux.png" srcTo="https://redux.js.org/" />
+          <Images src="next-js-logo.png" srcTo="https://nextjs.org/" />
         </div>
-        <div className="flex py-5 justify-between" key={2}>
-          <Images src="framer.svg" />
-          <Images src="node.png" />
-          <Images src="mongo.png" />
+        <div className="flex imagesPos lg:py-5  justify-between" key={2}>
+          <Images src="framer.svg" srcTo="https://www.framer.com/motion/" />
+          <Images src="node.png" srcTo="https://nodejs.org/en" />
+          <Images src="mongo.png" srcTo="https://www.mongodb.com/" />
         </div>
-        <div className="flex py-5 justify-between" key={3}>
-          <Images src="tailwind.png" />
-          <Images src="git.png" />
-          <Images src="tanstack.png" />
+        <div className="flex imagesPos lg:py-5  justify-between" key={3}>
+          <Images src="tailwind.png" srcTo="https://tailwindcss.com/" />
+          <Images src="git.png" srcTo="https://git-scm.com/" />
+          <Images
+            src="tanstack.png"
+            srcTo="https://tanstack.com/query/latest"
+          />
         </div>
       </motion.div>
     </>

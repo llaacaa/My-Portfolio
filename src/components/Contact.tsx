@@ -5,7 +5,7 @@ const Contact: React.FC<{ onClose: () => void; handleClick: () => void }> = (
 ) => {
   return (
     <Modal onClose={props.onClose} title="Contact">
-      <div className="flex bg-slate-300 p-3">
+      <div className="flex border-2 border-black  rounded-lg  p-3">
         <a href="https://github.com/llaacaa">
           <img src="github.png" className="mx-5 max-h-10" />
         </a>

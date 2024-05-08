@@ -23,7 +23,6 @@ const Modal: React.FC<{
         open
         className="modal"
       >
-        <h2>{props.title}</h2>
         {props.children}
       </motion.dialog>
     </>,
